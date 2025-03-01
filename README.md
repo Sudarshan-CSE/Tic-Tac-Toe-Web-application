@@ -1,1 +1,1 @@
-# Tic-Tac-Toe-Web-applivcation
+# Tic-Tac-Toe-Web-application
