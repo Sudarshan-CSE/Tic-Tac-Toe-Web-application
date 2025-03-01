@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #1e3c72;
+    margin-bottom: 1.5rem;
+}
+
+/* Mode Selection Styles */
+.mode-selection {
+    margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.mode-btn.active {
+    background: #1e3c72;
+    color: white;
+}
+
+/* Player Inputs Styles */
+.player-inputs {
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.start-btn {
+    padding: 0.5rem 1rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+/* Game Board Styles */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 2rem auto;
+    max-width: 300px;
+}
+
+.cell {
+    background: #fff;
+    border: 2px solid #1e3c72;
+    border-radius: 5px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background: #f0f0f0;
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+/* Game Status Styles */
+.game-status {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Game Controls Styles */
+.game-controls {
+    margin-top: 1.5rem;
+}
+
+.control-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #1e3c72;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: #2a5298;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Winning Animation */
+@keyframes win {
+    0% { background: #fff; }
+    50% { background: #4CAF50; }
+    100% { background: #fff; }
+}
+
+.win {
+    animation: win 1s ease infinite;
+}
+
+/* Responsive Design */
+@media(max-width: 600px) {
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .game-board {
+        max-width: 250px;
+    }
+
+    .cell {
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    input[type="text"] {
+        width: 150px;
+    }
+} 

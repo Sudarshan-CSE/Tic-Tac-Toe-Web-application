@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="tictactoe.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        
+        <div class="mode-selection">
+            <button onclick="setGameMode('player')" class="mode-btn active" id="playerMode">2 Players</button>
+            <button onclick="setGameMode('computer')" class="mode-btn" id="computerMode">vs Computer</button>
+        </div>
+
+        
+        <div class="player-inputs" id="playerInputs">
+            <input type="text" id="player1" placeholder="Player 1 Name (X)" maxlength="10" required>
+            <input type="text" id="player2" placeholder="Player 2 Name (O)" maxlength="10" required>
+            <button onclick="startGame()" class="start-btn">Start Game</button>
+        </div>
+
+        <!-- Game Status -->
+        <div class="game-status" id="gameStatus">
+            <p id="statusText">Player X's turn</p>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-board" id="gameBoard">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button onclick="resetGame()" class="control-btn">Reset Game</button>
+            <button onclick="showStats()" class="control-btn">Show Stats</button>
+        </div>
+
+        <!-- Stats Modal -->
+        <div id="statsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeStats()">&times;</span>
+                <h2>Game Statistics</h2>
+                <div id="statsContent"></div>
+            </div>
+        </div>
+    </div>
+    <script src="tictactoe.js"></script>
+</body>
+</html> 
